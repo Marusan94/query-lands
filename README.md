@@ -1,98 +1,177 @@
-# LAB.CORE — Campus Central
+<p align="center">
+  <h1 align="center">🧪 tech-interview-lab</h1>
+  <p align="center"><strong>Plataforma interactiva de preparación para entrevistas técnicas</strong><br>
+  16 retos SQL + 3 retos JS con validación en tiempo real, viaje gamificado por islas, tutor IA y repaso espaciado.<br>
+  <a href="https://tech-interview-bwx5ib0ib-maru-de07.vercel.app"><strong>🚀 Live Demo » tech-interview-lab.vercel.app</strong></a></p>
+  <p align="center">
+    <img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat-square" alt="Version" />
+    <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/SQLite-WASM-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite WASM" />
+    <img src="https://img.shields.io/badge/Tests-22%20passing-brightgreen?style=flat-square&logo=vitest&logoColor=white" alt="Tests" />
+    <img src="https://img.shields.io/badge/CI-GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" alt="CI" />
+    <img src="https://img.shields.io/badge/License-Personal/Educational-lightgrey?style=flat-square" alt="License" />
+  </p>
+</p>
 
-Plataforma estilo Duolingo para **pruebas técnicas reales de entrevistas**: SQL y JavaScript, 100% interactiva, con viaje por islas, salas de niveles, racha, XP, repaso espaciado y tutor IA.
+---
 
-> Diseño propio inspirado en patrones públicos de apps de aprendizaje (ruta guiada, microlecciones, feedback inmediato, gamificación). Ver `DESIGN.md`.
+## 📋 Tabla de Contenidos
 
-## Qué incluye
+- [Screenshots](#-screenshots)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Quickstart](#-quickstart)
+- [Project Structure](#-project-structure)
+- [Roadmap](#-roadmap)
+- [License](#-license)
 
-```text
-[16 retos SQL] SELECT → window functions, con ingeniería inversa de
-  DataLemur, HackerRank, StrataScratch y LeetCode DB. Validación por
-  result-sets + tests ocultos que atrapan memorización.
-[3 retos JS] FizzBuzz, palíndromo, agrupa-y-promedia, con tests visibles + ocultos.
-[Viaje por islas] 4 islas animadas (día, faro nocturno, volcán, cristales),
-  mapa en mitad opuesta al tema (yin-yang), ruta dorada que se llena, tesoro final.
-[Salas de nivel] Cada isla es una torre de pisos N1..Nn con XP y dominio.
-[Simulacro] 4 retos en 45 min + corrección IA con rúbrica.
-[✦ IA con Gemini] Tutor socrático, explicador, generador de retos
-  auto-validados en SQLite real.
-[Gamificación] XP, niveles/100, racha con heatmap, monedas, logros,
-  misiones diarias, meta diaria, certificado imprimible.
-[Lectura amable] Sin negros/blancos puros, modo calma, foco visible,
-  skip-link, tamaño de texto, sonido desactivable, reduced-motion.
-[Modo claro/oscuro] Equilibrados como yin-yang + toggle ☯ en la barra.
-```
+---
 
-## Rutas
+## 🖼️ Screenshots
 
-```text
-/                  Aprender (curso, meta diaria, continuar, viaje)
-/sql               Camino + lista libre del track SQL
-/sql/[slug]        Reto SQL (intro, editor, COMPROBAR, tutor IA)
-/sql/isla/[unidad] Sala de la isla (pisos N1..Nn)
-/sql/simulacro     Examen 45 min + corrección IA
-/js · /js/[slug]   Track JavaScript
-/lab/generar       Generador de retos con IA
-/repasar           Débiles + programados + repaso rápido (repetición espaciada)
-/desafios          Misiones diarias + simulacro + logros
-/logros            Badges + mapa 8 semanas + certificado
-/perfil            Nivel, stats, semana, tiempo
-/ajustes           Nombre, meta, texto, tema, calma, sonido, exportar, borrar
-/cursos · /empezar Cursos + onboarding en 4 pasos
-```
+| Vista | Descripción |
+|-------|-------------|
+| **Mapa de Islas** | 4 islas animadas (día, faro nocturno, volcán, cristales) con ruta dorada que se llena según progreso |
+| **Reto SQL** | Editor Monaco + validación SQLite WASM en browser, tests visibles + ocultos |
+| **Sala de Nivel** | Torres N1..Nn por isla, XP, dominio, racha y heatmap |
+| **Tutor IA** | Modo socrático: pistas progresivas, explicación paso a paso, solución validada |
+| **Simulacro** | 4 retos en 45 min + corrección IA con rúbrica |
+| **Logros** | Badges, mapa 8 semanas, certificado imprimible |
 
-## Correr local
+> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-bwx5ib0ib-maru-de07.vercel.app](https://tech-interview-bwx5ib0ib-maru-de07.vercel.app)
+
+---
+
+## ✨ Features
+
+| Categoría | Detalle |
+|-----------|---------|
+| **16 Retos SQL** | SELECT → window functions. Ingeniería inversa de DataLemur, HackerRank, StrataScratch, LeetCode DB. Validación por result-sets + tests ocultos anti-memorización |
+| **3 Retos JS** | FizzBuzz, palíndromo, agrupa-y-promedia. Tests visibles + ocultos |
+| **Viaje por Islas** | 4 islas temáticas animadas, mapa yin-yang, ruta dorada progresiva, velero en isla actual, tesoro final bloqueado/desbloqueado |
+| **Salas de Nivel** | Cada isla = torre de pisos N1..Nn con XP, dominio, racha |
+| **Simulacro 45 min** | 4 retos mixtos + corrección IA con rúbrica detallada |
+| **Tutor IA (Gemini)** | Socrático, explicador, generador de retos auto-validados en SQLite real |
+| **Gamificación** | XP, niveles/100, racha + heatmap, monedas, logros, misiones diarias, meta diaria, certificado |
+| **Accesibilidad** | Sin negros/blancos puros, modo calma, foco visible, skip-link, texto escalable, sonido off, reduced-motion |
+| **Tema** | Claro/oscuro equilibrados como yin-yang + toggle 🌗 en barra superior |
+| **Onboarding** | 4 pasos guiados + curso introductorio |
+
+---
+
+## 🛠️ Tech Stack
+
+| Capa | Tecnologías |
+|------|-------------|
+| **Frontend** | Next.js 16 (App Router), React 19, TypeScript 5, Tailwind 4 |
+| **Editor/Validación** | Monaco Editor, `sql.js` (SQLite WASM en browser) |
+| **IA** | `@google/generative-ai` (Gemini Flash) |
+| **Estado** | `localStorage` (progreso, drafts, mastery, perfil, racha) |
+| **Testing** | Vitest + Testing Library (22 tests: curriculum, engine, path, gamificación, prompts, soluciones) |
+| **Calidad** | ESLint 9, TypeScript strict |
+| **Deploy** | Vercel (automático desde `main`) |
+
+---
+
+## ⚡ Quickstart
 
 ```bash
+# 1. Clona
+git clone https://github.com/Marusan94/tech-interview-lab.git
+cd tech-interview-lab
+
+# 2. Instala (pnpm recomendado)
 pnpm install
-pnpm dev      # http://localhost:3000
-```
 
-## Variables de entorno
+# 3. Variables de entorno (opcional - sin key los botones IA muestran error amable)
+cp .env.local.example .env.local
+# GEMINI_API_KEY=tu-key  # tutor, generador, corrección IA
 
-```bash
-# .env.local (solo servidor, nunca NEXT_PUBLIC)
-GEMINI_API_KEY=tu-key   # tutor, generador y corrección IA
-```
+# 4. Desarrollo
+pnpm dev
+# → http://localhost:3000
 
-Sin key, la app funciona completa salvo los botones [✦] (muestran error amable).
-
-## Verificación
-
-```bash
+# 5. Verificación
 pnpm lint
-pnpm test    # comparador, curriculum, camino, gamificación, prompts, soluciones en SQLite real
+pnpm test      # 22 tests
 pnpm build
 ```
 
-## Stack
+<details>
+<summary><strong>Detalles de .env.local</strong></summary>
 
-```text
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind 4
-sql.js (SQLite WASM en browser) · @google/generative-ai (Gemini Flash)
-Vitest · localStorage (progreso, drafts, mastery, perfil)
+```bash
+# .env.local (solo servidor, NUNCA NEXT_PUBLIC)
+GEMINI_API_KEY=tu-key   # habilita: tutor, generador, corrección IA
 ```
 
-## Estructura
+Sin key la app funciona completa: retos, mapa, salas, simulacro, repaso, logros, perfil. Solo los botones [💡] IA muestran error amable.
+</details>
+
+---
+
+## 📁 Project Structure
 
 ```text
-src/app/            rutas + 3 API (/api/tutor, /api/generar, /api/correccion)
-src/components/     runners, camino, islas, sala, toggles, celebración…
-src/lib/            curriculum(s), engine, path, progress, estado, logros, ai/, sonido
-public/sql-wasm.*   motor SQLite para browser
-DESIGN.md           especificación de diseño (fuente de verdad)
+tech-interview-lab/
+├── public/
+│   ├── sql-wasm.js          # SQLite WASM runtime (~46 KB)
+│   └── sql-wasm.wasm        # SQLite WASM binary (~658 KB)
+├── src/
+│   ├── app/                 # Next.js App Router (42 rutas)
+│   │   ├── api/             # 3 endpoints IA
+│   │   │   ├── tutor/       # Tutor socrático + explicador
+│   │   │   ├── generar/     # Generador retos auto-validados
+│   │   │   └── correccion/  # Corrección simulacro con rúbrica
+│   │   ├── sql/             # Track SQL (16 retos + islas + simulacro)
+│   │   ├── js/              # Track JS (3 retos)
+│   │   ├── logros/          # Badges, heatmap 8 sem, certificado
+│   │   ├── repasar/         # Débiles + programados + rápido
+│   │   ├── desafios/        # Misiones diarias/semanales
+│   │   ├── perfil/          # Nivel, stats, semana, tiempo
+│   │   └── ajustes/         # Tema, calma, fuente, sonido, export/borrar
+│   ├── components/          # 26 componentes (runners, mapa, islas, salas, toggles, celebración)
+│   │   ├── SqlRunner.tsx    # Editor Monaco + validación SQLite
+│   │   ├── JsRunner.tsx     # Runner JS + tests Vitest
+│   │   ├── IslaMap.tsx      # Mapa animado 4 islas + velero + ruta
+│   │   ├── SalaClient.tsx   # Torre N1..Nn + XP/dominio
+│   │   ├── SimulacroClient.tsx
+│   │   └── ...
+│   └── lib/
+│       ├── curriculum.ts    # 16 retos SQL tipados
+│       ├── curriculumJs.ts  # 3 retos JS tipados
+│       ├── engine.ts        # Comparador result-sets + tests ocultos
+│       ├── path.ts          # Lógica islas + progreso ruta
+│       ├── progress.ts      # XP, niveles, racha, monedas, logros
+│       ├── estado.ts        # Persistencia localStorage
+│       ├── logros.ts        # Badges, hitos, certificado
+│       └── ai/              # Prompts, provider Gemini
+└── DESIGN.md                # Especificación completa (fuente de verdad)
 ```
 
-## Roadmap
+---
 
-```text
-[ ] Track Python (Pyodide)
-[ ] Liga entre amigos (ranking local → compartido)
-[ ] Tienda: gastar monedas en temas y protección de racha
-[ ] PWA offline
-```
+## 🗺️ Roadmap
 
-## Licencia
+- [ ] **Track Python** (Pyodide + WASM)
+- [ ] **Liga entre amigos** (ranking local + compartido via link)
+- [ ] **Tienda** (gastar monedas en temas, protectores de racha, boosters)
+- [ ] **PWA offline** (Service Worker + cache estratégico)
+- [ ] **Más retos SQL** (CTEs recursivas, lateral joins, JSON)
+- [ ] **Retos TypeScript** (tipado estricto, generics, utility types)
+
+---
+
+## 📄 License
 
 Uso personal/educativo. Contenido de práctica original del proyecto.
+
+---
+
+<p align="center">
+  <strong>Hecho en Medellín 🇨🇴 por <a href="https://github.com/Marusan94">@Marusan94</a></strong><br>
+  <em>Prepárate para la entrevista. Domina el código. Consigue el trabajo.</em>
+</p>
