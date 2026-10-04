@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface CapybaraProps {
   xp: number;
@@ -66,6 +66,16 @@ function getFraseContexto(xp: number, streak: number, nivel: number, hora: numbe
   return FRASES.saludo[Math.floor(Math.random() * FRASES.saludo.length)];
 }
 
+function getEmojiForState(xp: number, streak: number, hora: number) {
+  if (hora >= 23 || hora < 6) {
+    return EMOJIS_SLEEP[Math.floor(Math.random() * EMOJIS_SLEEP.length)];
+  }
+  if (xp > 50 || streak > 5) {
+    return EMOJIS_HAPPY[Math.floor(Math.random() * EMOJIS_HAPPY.length)];
+  }
+  return EMOJIS_IDLE[Math.floor(Math.random() * EMOJIS_IDLE.length)];
+}
+
 const EMOJIS_IDLE = ["🌿", "⚔", "✦", "🌿", "🌱", "⚔"];
 const EMOJIS_HAPPY = ["⚔", "✦", "🌟", "💚", "🌿", "⚔"];
 const EMOJIS_SLEEP = ["😴", "💤", "🌙", "😴", "💤"];
@@ -81,27 +91,28 @@ function randomChoice<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function computeInitialState(xp: number, streak: number, nivel: number) {
+  const hora = new Date().getHours();
+  return {
+    frase: getFraseContexto(xp, streak, nivel, hora),
+    emoji: getEmojiForState(xp, streak, hora),
+    pos: POSICIONES[Math.floor(Math.random() * POSICIONES.length)],
+  };
+}
+
 export default function CapybaraCompanion({ xp, streak, nivel }: CapybaraProps) {
-  const [frase, setFrase] = useState("");
-  const [emoji, setEmoji] = useState("🌿");
+  const [frase, setFrase] = useState(() => computeInitialState(xp, streak, nivel).frase);
+  const [emoji, setEmoji] = useState(() => computeInitialState(xp, streak, nivel).emoji);
   const [animando, setAnimando] = useState(false);
   const [mostrarTip, setMostrarTip] = useState(false);
-  const [pos, setPos] = useState(POSICIONES[0]);
+  const [pos] = useState(() => computeInitialState(xp, streak, nivel).pos);
   const initializedRef = useRef(false);
 
   const actualizarFrase = useCallback(() => {
     const hora = new Date().getHours();
     const nuevaFrase = getFraseContexto(xp, streak, nivel, hora);
     setFrase(nuevaFrase);
-
-    if (hora >= 23 || hora < 6) {
-      setEmoji(randomChoice(EMOJIS_SLEEP));
-    } else if (xp > 50 || streak > 5) {
-      setEmoji(randomChoice(EMOJIS_HAPPY));
-    } else {
-      setEmoji(randomChoice(EMOJIS_IDLE));
-    }
-
+    setEmoji(getEmojiForState(xp, streak, hora));
     setAnimando(true);
     setTimeout(() => setAnimando(false), 600);
   }, [xp, streak, nivel]);
@@ -109,8 +120,7 @@ export default function CapybaraCompanion({ xp, streak, nivel }: CapybaraProps) 
   useEffect(() => {
     if (!initializedRef.current) {
       initializedRef.current = true;
-      const randIdx = Math.floor(Math.random() * POSICIONES.length);
-      setPos(POSICIONES[randIdx]);
+      return;
     }
     actualizarFrase();
   }, [actualizarFrase]);
@@ -312,10 +322,12 @@ const TIPS_JS = [
 export function CapybaraTip({ track }: { track?: "sql" | "js" }) {
   const [tip, setTip] = useState("");
   const [visible, setVisible] = useState(false);
+  const tipRef = useRef("");
 
   useEffect(() => {
     const tips = track === "js" ? TIPS_JS : TIPS_SQL;
-    const selectedTip = randomChoice(tips);
+    const selectedTip = tips[Math.floor(Math.random() * tips.length)];
+    tipRef.current = selectedTip;
     setTip(selectedTip);
     setVisible(true);
     const t = setTimeout(() => setVisible(false), 10000);

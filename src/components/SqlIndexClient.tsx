@@ -98,7 +98,7 @@ export default function SqlIndexClient() {
           <div style={{ fontSize: 13, marginTop: 6, color: "var(--body)" }}>Ruta SQL dominada. Sigue con <Link href="/js" style={{ color: "var(--gem)" }}>[JS ALGORÍTMICO]</Link> o repite el <Link href="/sql/simulacro" style={{ color: "var(--accent)" }}>[SIMULACRO 45&apos;]</Link>.</div>
         </div>
       )}
-      {list.length === 0 && <div style={{ padding: "28px 0", color: "var(--mute)" }}>[~] SIN RESULTADOS PARA "{q}"</div>}
+      {list.length === 0 && <div style={{ padding: "28px 0", color: "var(--mute)" }}>[~] SIN RESULTADOS PARA {q}</div>}
       {list.map((c) => (
         <div key={c.id} style={{ padding: "18px 0", borderBottom: "1px solid var(--hairline)" }}>
           <div style={{ display: "flex", gap: 12, alignItems: "baseline", flexWrap: "wrap" }}>
