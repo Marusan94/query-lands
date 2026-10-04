@@ -38,7 +38,7 @@ export default function LogrosClient() {
       </div>
       {n === logros.length && (
         <div className="band-dark" style={{ padding: 24, marginTop: 24, borderTop: "4px solid var(--bee)" }}>
-          <div className="st-bee" style={{ fontWeight: 700, fontSize: 20 }}>[★] CERTIFICADO LAB</div>
+          <div className="st-bee" style={{ fontWeight: 700, fontSize: 20 }}>[★] CERTIFICADO QUERY LANDS</div>
           <p style={{ marginTop: 8, fontSize: 14 }}>Completaste SQL + JS. Imprime esta página (Ctrl+P) como constancia de práctica.</p>
         </div>
       )}

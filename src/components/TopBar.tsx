@@ -22,9 +22,9 @@ export default function TopBar() {
     <header className="site-chrome" style={{ borderBottom: "1px solid var(--hairline)", position: "sticky", top: 0, zIndex: 30 }}>
       <div style={{ marginInline: "auto", padding: "10px 24px", display: "flex", alignItems: "center", gap: 10 }} className="topbar-inner">
         <Link href="/" style={{ fontWeight: 800, textDecoration: "none", letterSpacing: 1 }} aria-label="inicio">
-          LAB<span style={{ color: "var(--accent-2)" }}>.CORE</span>
+          Query<span style={{ color: "var(--accent-2)" }}> Lands</span>
         </Link>
-        <span style={{ fontSize: 13, opacity: 0.75 }}>Campus Central</span>
+        <span style={{ fontSize: 13, opacity: 0.75 }}>Islas de práctica</span>
         <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center" }}>
           <ThemeToggle />
           <Link href="/perfil" aria-label="tu perfil"

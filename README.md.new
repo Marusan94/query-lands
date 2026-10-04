@@ -1,0 +1,99 @@
+﻿# Query Lands â€” Campus Central
+
+Plataforma estilo Duolingo para **pruebas tÃ©cnicas reales de entrevistas**: SQL y JavaScript, 100% interactiva, con viaje por islas, salas de niveles, racha, XP, repaso espaciado y tutor IA.
+
+> DiseÃ±o propio inspirado en patrones pÃºblicos de apps de aprendizaje (ruta guiada, microlecciones, feedback inmediato, gamificaciÃ³n). Ver `DESIGN.md`.
+
+## QuÃ© incluye
+
+```text
+[16 retos SQL] SELECT â†’ window functions, con ingenierÃ­a inversa de
+  DataLemur, HackerRank, StrataScratch y LeetCode DB. ValidaciÃ³n por
+  result-sets + tests ocultos que atrapan memorizaciÃ³n.
+[3 retos JS] FizzBuzz, palÃ­ndromo, agrupa-y-promedia, con tests visibles + ocultos.
+[Viaje por islas] 4 islas animadas (dÃ­a, faro nocturno, volcÃ¡n, cristales),
+  mapa en mitad opuesta al tema (yin-yang), ruta dorada que se llena, tesoro final.
+[Salas de nivel] Cada isla es una torre de pisos N1..Nn con XP y dominio.
+[Simulacro] 4 retos en 45 min + correcciÃ³n IA con rÃºbrica.
+[âœ¦ IA con Gemini] Tutor socrÃ¡tico, explicador, generador de retos
+  auto-validados en SQLite real.
+[GamificaciÃ³n] XP, niveles/100, racha con heatmap, monedas, logros,
+  misiones diarias, meta diaria, certificado imprimible.
+[Lectura amable] Sin negros/blancos puros, modo calma, foco visible,
+  skip-link, tamaÃ±o de texto, sonido desactivable, reduced-motion.
+[Modo claro/oscuro] Equilibrados como yin-yang + toggle â˜¯ en la barra.
+```
+
+## Rutas
+
+```text
+/                  Aprender (curso, meta diaria, continuar, viaje)
+/sql               Camino + lista libre del track SQL
+/sql/[slug]        Reto SQL (intro, editor, COMPROBAR, tutor IA)
+/sql/isla/[unidad] Sala de la isla (pisos N1..Nn)
+/sql/simulacro     Examen 45 min + correcciÃ³n IA
+/js Â· /js/[slug]   Track JavaScript
+/lab/generar       Generador de retos con IA
+/repasar           DÃ©biles + programados + repaso rÃ¡pido (repeticiÃ³n espaciada)
+/desafios          Misiones diarias + simulacro + logros
+/logros            Badges + mapa 8 semanas + certificado
+/perfil            Nivel, stats, semana, tiempo
+/ajustes           Nombre, meta, texto, tema, calma, sonido, exportar, borrar
+/cursos Â· /empezar Cursos + onboarding en 4 pasos
+```
+
+## Correr local
+
+```bash
+pnpm install
+pnpm dev      # http://localhost:3000
+```
+
+## Variables de entorno
+
+```bash
+# .env.local (solo servidor, nunca NEXT_PUBLIC)
+GEMINI_API_KEY=tu-key   # tutor, generador y correcciÃ³n IA
+```
+
+Sin key, la app funciona completa salvo los botones [âœ¦] (muestran error amable).
+
+## VerificaciÃ³n
+
+```bash
+pnpm lint
+pnpm test    # comparador, curriculum, camino, gamificaciÃ³n, prompts, soluciones en SQLite real
+pnpm build
+```
+
+## Stack
+
+```text
+Next.js 16 (App Router) Â· React 19 Â· TypeScript Â· Tailwind 4
+sql.js (SQLite WASM en browser) Â· @google/generative-ai (Gemini Flash)
+Vitest Â· localStorage (progreso, drafts, mastery, perfil)
+```
+
+## Estructura
+
+```text
+src/app/            rutas + 3 API (/api/tutor, /api/generar, /api/correccion)
+src/components/     runners, camino, islas, sala, toggles, celebraciÃ³nâ€¦
+src/lib/            curriculum(s), engine, path, progress, estado, logros, ai/, sonido
+public/sql-wasm.*   motor SQLite para browser
+DESIGN.md           especificaciÃ³n de diseÃ±o (fuente de verdad)
+```
+
+## Roadmap
+
+```text
+[ ] Track Python (Pyodide)
+[ ] Liga entre amigos (ranking local â†’ compartido)
+[ ] Tienda: gastar monedas en temas y protecciÃ³n de racha
+[ ] PWA offline
+```
+
+## Licencia
+
+Uso personal/educativo. Contenido de prÃ¡ctica original del proyecto.
+

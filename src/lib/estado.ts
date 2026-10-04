@@ -4,11 +4,35 @@ import { challenges, xpFor } from "./curriculum";
 import { jsChallenges } from "./curriculumJs";
 import type { ProgressMap } from "./progress";
 
+// ===== Helpers (definidos UNA sola vez al inicio) =====
+function hoy(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+}
+function esHoy(ts: number): boolean {
+  const d = new Date(ts);
+  return hoy() === `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+}
+
 // ===== Perfil / onboarding =====
-export type Perfil = { nombre: string; track: "sql" | "js"; nivel: string; metaDiaria: number; listo: boolean };
+export type Perfil = { 
+  nombre: string; 
+  track: "sql" | "js"; 
+  nivel: string; 
+  metaDiaria: number; 
+  listo: boolean;
+  rachaActual: number;
+};
 
 const PERFIL_KEY = "til-perfil";
-export const PERFIL_DEFAULT: Perfil = { nombre: "", track: "sql", nivel: "principiante", metaDiaria: 30, listo: false };
+export const PERFIL_DEFAULT: Perfil = { 
+  nombre: "", 
+  track: "sql", 
+  nivel: "principiante", 
+  metaDiaria: 30, 
+  listo: false,
+  rachaActual: 0,
+};
 
 export function loadPerfil(): Perfil {
   try {
@@ -21,7 +45,7 @@ export function savePerfil(p: Perfil) {
   localStorage.setItem(PERFIL_KEY, JSON.stringify(p));
 }
 
-// ===== Mastery (motor de repetición, §21) =====
+// ===== Mastery (motor de repetición, ±21) =====
 export type Mastery = Record<string, { intentos: number; fallos: number; ultimo: number }>;
 const MASTERY_KEY = "til-mastery";
 
@@ -38,7 +62,6 @@ export function registraIntento(id: string, ok: boolean) {
   e.intentos++;
   if (!ok) e.fallos++;
   e.ultimo = Date.now();
-  m[id] = e;
   localStorage.setItem(MASTERY_KEY, JSON.stringify(m));
 }
 export function dominio(m: Mastery, id: string): number {
@@ -88,15 +111,7 @@ export function nivelDe(xp: number): { nivel: number; base: number; siguiente: n
   return { nivel, base: (nivel - 1) * 100, siguiente: nivel * 100 };
 }
 
-// ===== Meta diaria / quests (§18, §22) =====
-function hoy(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
-}
-function esHoy(ts: number): boolean {
-  const d = new Date(ts);
-  return hoy() === `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
-}
+// ===== Meta diaria / quests (≈18, ≈22) =====
 export function xpHoy(p: ProgressMap): number {
   let xp = 0;
   for (const c of challenges) {

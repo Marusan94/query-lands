@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HomeClient from "@/components/HomeClient";
 
 export const metadata: Metadata = {
-  title: "Aprender — tech-interview-lab",
+  title: "Aprender — Query Lands",
   description: "Tu ruta guiada: dónde estás, qué sigue y cuánto te falta.",
 };
 

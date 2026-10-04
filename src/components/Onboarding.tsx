@@ -20,14 +20,14 @@ export default function Onboarding() {
     setShow(false);
   }
   return (
-    <div className="card-flat" style={{ padding: 16, marginTop: 16, background: "var(--accent-2-soft)" }}>
-      <div style={{ fontWeight: 700 }}>[?] cómo funciona en 3 pasos</div>
-      <ol style={{ marginTop: 8, paddingLeft: 20, display: "grid", gap: 4, fontSize: 14 }}>
-        <li><strong>Lee</strong> el enunciado y mira los datos de ejemplo.</li>
-        <li><strong>Corre</strong> con [Run] (Ctrl+Enter) y compara con el esperado.</li>
-        <li><strong>Envía</strong> con [Submit]: el test oculto califica como en entrevista.</li>
+    <div className="card-elev" style={{ padding: 20, marginTop: 16, background: "var(--accent-soft)", borderColor: "var(--accent)" }}>
+      <div style={{ fontWeight: 700, fontFamily: "var(--font-rpg)", textTransform: "uppercase", color: "var(--accent)" }}>[⚔] CÓMO FUNCIONA EN 3 PASOS</div>
+      <ol style={{ marginTop: 10, paddingLeft: 20, display: "grid", gap: 8, fontSize: 13, color: "var(--body)" }}>
+        <li><strong>LEE</strong> el enunciado y examina los datos de ejemplo.</li>
+        <li><strong>EJECUTA</strong> con [RUN] (Ctrl+Enter) y compara con el esperado.</li>
+        <li><strong>ENVÍA</strong> con [SUBMIT]: el test oculto califica como prueba real.</li>
       </ol>
-      <button className="btn btn-secondary" style={{ height: 32, fontSize: 14, marginTop: 12 }} onClick={cerrar}>[entendido]</button>
+      <button className="btn btn-accent btn-rpg" style={{ height: 40, fontSize: 11, marginTop: 14 }} onClick={cerrar}>[⚔ ENTENDIDO]</button>
     </div>
   );
 }

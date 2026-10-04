@@ -70,31 +70,31 @@ export default function SimulacroClient() {
       <div className="band-dark" style={{ padding: 16, marginTop: 16, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
         <span className={left <= 300 ? "timer-urgente" : "timer-ok"}>[{mm}]</span>
         <span className={Object.keys(done).length === list.length ? "st-ok" : ""}>[{Object.keys(done).length}/{list.length} resueltos]</span>
-        <span style={{ fontSize: 14, opacity: 0.8 }}>sin solución visible · sin esperado · como en entrevista</span>
+        <span style={{ fontSize: 13, opacity: 0.8, fontFamily: "var(--font-rpg)", textTransform: "uppercase", letterSpacing: "0.02em" }}>SIN SOLUCIÓN VISIBLE · SIN ESPERADO · COMO PRUEBA REAL</span>
       </div>
-      {left === 0 && <div className="codeblock" style={{ marginTop: 16, borderColor: "var(--warning)" }}>[!] tiempo agotado — envía lo que tengas con [Submit] en cada reto.</div>}
+      {left === 0 && <div className="codeblock" style={{ marginTop: 16, borderColor: "var(--warning)" }}>[!] TIEMPO AGOTADO — ENVÍA LO QUE TENGAS CON [SUBMIT] EN CADA RETO.</div>}
       <div style={{ marginTop: 16, display: "grid", gap: 12 }}>
         {list.map((c, i) => (
           <div key={c.id} className="card-flat" style={{ padding: 16 }}>
             <div style={{ display: "flex", gap: 12, alignItems: "baseline", flexWrap: "wrap" }}>
-              <span style={{ color: "var(--mute)" }}>Q{i + 1}</span>
-              <Link href={`/sql/${c.id}`} style={{ fontWeight: 700 }}>{done[c.id] ? "[+] " : "[ ] "}{c.titulo}</Link>
-              <span className={`dif dif-${c.dificultad}`}>[{c.dificultad}]</span>
+              <span style={{ color: "var(--mute)", fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>RETO {i + 1}</span>
+              <Link href={`/sql/${c.id}`} style={{ fontWeight: 700 }}>{done[c.id] ? "✦ " : "⚔ "}{c.titulo}</Link>
+              <span className={`dif dif-${c.dificultad}`}>[{c.dificultad.toUpperCase()}]</span>
             </div>
-            <div style={{ fontSize: 14, color: "var(--body)", marginTop: 4 }}>{c.enunciado.slice(0, 120)}…</div>
+            <div style={{ fontSize: 13, color: "var(--body)", marginTop: 4 }}>{c.enunciado.slice(0, 120)}...</div>
           </div>
         ))}
       </div>
       <div className="card-flat" style={{ padding: 16, marginTop: 16, borderTop: "3px solid var(--gem)" }}>
         <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-          <span style={{ fontSize: 14, fontWeight: 700 }}>[✦] corrección IA</span>
-          <span style={{ fontSize: 12, color: "var(--mute)" }}>rúbrica + plan de repaso con tus intentos</span>
-          <button className="btn btn-secondary" style={{ height: 32, fontSize: 14, marginLeft: "auto" }} disabled={corrigiendo} onClick={corregir}>
-            {corrigiendo ? "[corrigiendo...]" : "[✦ corregir simulacro]"}
+          <span style={{ fontSize: 13, fontWeight: 700, fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>💡 CORRECCIÓN IA</span>
+          <span style={{ fontSize: 11, color: "var(--mute)" }}>RÚBRICA + PLAN DE REPASO CON TUS INTENTOS</span>
+          <button className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 11 }} disabled={corrigiendo} onClick={corregir}>
+            {corrigiendo ? "[CORRIGIENDO...]" : "[💡 CORREGIR SIMULACRO]"}
           </button>
         </div>
-        {corrErr && <div className="st-err" style={{ marginTop: 8, fontSize: 14 }}>[!] {corrErr}</div>}
-        {reporte && <div style={{ marginTop: 8, fontSize: 14, whiteSpace: "pre-wrap" }}>{reporte}</div>}
+        {corrErr && <div className="st-err" style={{ marginTop: 8, fontSize: 13 }}>[!] {corrErr}</div>}
+        {reporte && <div style={{ marginTop: 8, fontSize: 13, whiteSpace: "pre-wrap" }}>{reporte}</div>}
       </div>
     </div>
   );

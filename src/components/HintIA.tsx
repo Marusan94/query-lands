@@ -43,20 +43,20 @@ export default function HintIA(props: {
 
   return (
     <div className="card-flat" style={{ padding: 16, marginTop: 16, borderTop: "3px solid var(--gem)" }}>
-      <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-        <span style={{ fontSize: 14, fontWeight: 700 }}>[✦] tutor IA</span>
-        <span style={{ fontSize: 12, color: "var(--mute)" }}>nunca da la solución directa</span>
+      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: "var(--font-rpg)", textTransform: "uppercase", color: "var(--gem)" }}>💡 CAPIBARA TUTOR</span>
+        <span style={{ fontSize: 11, color: "var(--mute)" }}>NUNCA DA LA SOLUCIÓN DIRECTA</span>
         <span style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
-          <button className="btn btn-secondary" style={{ height: 32, fontSize: 14 }} disabled={busy !== null} onClick={() => pedir("pista")}>
-            {busy === "pista" ? "[...]" : "[pista]"}
+          <button className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 11 }} disabled={busy !== null} onClick={() => pedir("pista")}>
+            {busy === "pista" ? "[...]" : "[💡 PISTA]"}
           </button>
-          <button className="btn btn-secondary" style={{ height: 32, fontSize: 14 }} disabled={busy !== null} onClick={() => pedir("explica")}>
-            {busy === "explica" ? "[...]" : "[explícame]"}
+          <button className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 11 }} disabled={busy !== null} onClick={() => pedir("explica")}>
+            {busy === "explica" ? "[...]" : "[💡 EXPLÍCAME]"}
           </button>
         </span>
       </div>
-      {err && <div style={{ marginTop: 8, fontSize: 14 }} className="st-err">[!] {err}</div>}
-      {out && <div style={{ marginTop: 8, fontSize: 14, whiteSpace: "pre-wrap" }}>{out}</div>}
+      {err && <div style={{ marginTop: 8, fontSize: 13 }} className="st-err">[!] {err}</div>}
+      {out && <div style={{ marginTop: 8, fontSize: 13, whiteSpace: "pre-wrap", lineHeight: 1.6 }}>{out}</div>}
     </div>
   );
 }

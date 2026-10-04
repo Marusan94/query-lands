@@ -12,8 +12,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const c = getJsChallenge(slug);
-  if (!c) return { title: "reto no encontrado — tech-interview-lab" };
-  return { title: `${c.titulo} — js — tech-interview-lab`, description: c.enunciado.slice(0, 150) };
+  if (!c) return { title: "reto no encontrado — Query Lands" };
+  return { title: `${c.titulo} — js — Query Lands`, description: c.enunciado.slice(0, 150) };
 }
 
 export default async function JsChallengePage({ params }: { params: Promise<{ slug: string }> }) {

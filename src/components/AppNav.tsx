@@ -21,9 +21,9 @@ export default function AppNav() {
     <>
       <aside className="app-side" aria-label="navegación principal">
         <Link href="/" style={{ fontWeight: 800, fontSize: 18, padding: "8px 16px", textDecoration: "none", letterSpacing: 1 }}>
-          LAB<span style={{ color: "var(--accent-2)" }}>.CORE</span>
+          Query<span style={{ color: "var(--accent-2)" }}> Lands</span>
         </Link>
-        <div style={{ fontSize: 12, color: "var(--mute)", padding: "0 16px 8px" }}>Campus Central</div>
+        <div style={{ fontSize: 12, color: "var(--mute)", padding: "0 16px 8px" }}>Islas de práctica</div>
         {ITEMS.map((i) => (
           <Link key={i.href} href={i.href} className="side-link" aria-current={actual(path, i.href) ? "page" : undefined}>
             <span aria-hidden>{i.icon}</span> {i.label}

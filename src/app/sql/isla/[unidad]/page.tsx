@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ unidad: string }> }): Promise<Metadata> {
   const { unidad } = await params;
   const u = UNIDADES.find((x) => x.id === unidad);
-  return { title: u ? `${u.titulo} — sala — tech-interview-lab` : "sala no encontrada" };
+  return { title: u ? `${u.titulo} — sala — Query Lands` : "sala no encontrada" };
 }
 
 export default async function SalaPage({ params }: { params: Promise<{ unidad: string }> }) {

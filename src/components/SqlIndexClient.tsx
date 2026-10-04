@@ -39,13 +39,13 @@ export default function SqlIndexClient() {
     <div>
       <div className="card-flat" style={{ padding: 16, marginTop: 16 }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-          <span style={{ fontWeight: 700 }}>[{Object.keys(done).length}/{challenges.length}] {pct}%</span>
-          <div style={{ flex: 1, minWidth: 160, height: 8, background: "var(--card)", borderRadius: 4, overflow: "hidden" }}>
-            <div style={{ width: `${pct}%`, height: "100%", background: "var(--accent-2)" }} />
+          <span style={{ fontWeight: 700, fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>[{Object.keys(done).length}/{challenges.length}] {pct}%</span>
+          <div style={{ flex: 1, minWidth: 160, height: 10, background: "var(--card)", borderRadius: 999, overflow: "hidden", boxShadow: "inset 0 2px 8px rgba(0,0,0,0.3)" }}>
+            <div style={{ width: `${pct}%`, height: "100%", background: "linear-gradient(90deg, var(--accent), #26a85a)", borderRadius: 999, boxShadow: "0 0 12px var(--accent-glow)" }} />
           </div>
-          <button className="btn btn-secondary" style={{ height: 32, fontSize: 14 }} onClick={() => { clearProgress(); setDone({}); setRacha(0); }}>[reset]</button>
+          <button className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 12 }} onClick={() => { clearProgress(); setDone({}); setRacha(0); }}>[🔄 RESET]</button>
           <button
-            className="btn btn-secondary" style={{ height: 32, fontSize: 14 }}
+            className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 12 }}
             onClick={() => {
               const blob = new Blob([exportProgress()], { type: "application/json" });
               const a = document.createElement("a");
@@ -53,9 +53,9 @@ export default function SqlIndexClient() {
               a.download = "til-progreso.json";
               a.click();
             }}
-          >[export]</button>
-          <label className="btn btn-secondary" style={{ height: 32, fontSize: 14, cursor: "pointer" }}>
-            [import]
+          >[💾 EXPORTAR]</button>
+          <label className="btn btn-secondary btn-rpg" style={{ height: 36, fontSize: 12, cursor: "pointer" }}>
+            [📥 IMPORTAR]
             <input
               type="file" accept="application/json" style={{ display: "none" }}
               onChange={async (e) => {
@@ -74,40 +74,40 @@ export default function SqlIndexClient() {
             />
           </label>
         </div>
-        <div style={{ display: "flex", gap: 16, marginTop: 8, fontSize: 14, flexWrap: "wrap" }}>
-          <span className="st-xp">[XP {xp}]</span><span className="st-racha">[racha {racha}d]</span><Link href="/sql/simulacro">[simulacro 45min →]</Link>
+        <div style={{ display: "flex", gap: 16, marginTop: 10, fontSize: 13, flexWrap: "wrap", fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>
+          <span className="st-xp">[⚔ XP {xp}]</span><span className="st-racha">[🔥 RACHA {racha}d]</span><Link href="/sql/simulacro" style={{ color: "var(--accent)" }}>[🏰 SIMULACRO 45&apos;]</Link>
         </div>
-        <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
           <input aria-label="buscar reto" className="input-mono" placeholder="$ buscar: join, window, likes..." value={q} onChange={(e) => setQ(e.target.value)} style={{ maxWidth: 320 }} />
           {(["todas", "facil", "media", "dificil"] as const).map((d) => (
-            <button key={d} className={dif === d ? "btn btn-primary" : "btn btn-secondary"} style={{ height: 32, fontSize: 14 }} onClick={() => setDif(d)}>[{d}]</button>
+            <button key={d} className={dif === d ? "btn btn-primary" : "btn btn-secondary"} style={{ height: 36, fontSize: 12 }} onClick={() => setDif(d)}>[{d.toUpperCase()}]</button>
           ))}
         </div>
         <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap", alignItems: "center" }}>
-          <label htmlFor="f-emp" style={{ fontSize: 14, color: "var(--mute)" }}>empresa:</label>
-          <select id="f-emp" className="input-mono" value={emp} onChange={(e) => setEmp(e.target.value)} style={{ maxWidth: 220, padding: "6px 12px" }}>
+          <label htmlFor="f-emp" style={{ fontSize: 12, color: "var(--mute)", fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>EMPRESA:</label>
+          <select id="f-emp" className="input-mono" value={emp} onChange={(e) => setEmp(e.target.value)} style={{ maxWidth: 220, padding: "8px 12px" }}>
             {empresas.map((e) => <option key={e} value={e}>{e}</option>)}
           </select>
         </div>
       </div>
 
-      <hr className="hr" style={{ marginTop: 24 }} />
+      <hr className="hr" style={{ marginTop: 28 }} />
       {pct === 100 && (
-        <div className="band-dark" style={{ padding: 16, marginTop: 16 }}>
-          <div style={{ fontWeight: 700 }}>[+] track SQL completado — {xp} XP</div>
-          <div style={{ fontSize: 14, marginTop: 4 }}>Nivel entrevista superado. Sigue con <Link href="/js" style={{ color: "inherit" }}>track js</Link> o repite el <Link href="/sql/simulacro" style={{ color: "inherit" }}>simulacro</Link>.</div>
+        <div className="band-dark" style={{ padding: 20, marginTop: 16, borderColor: "var(--accent)" }}>
+          <div style={{ fontWeight: 700, fontFamily: "var(--font-rpg)", textTransform: "uppercase", color: "var(--accent)" }}>[✦] RUTA SQL COMPLETADA · {xp} XP</div>
+          <div style={{ fontSize: 13, marginTop: 6, color: "var(--body)" }}>Ruta SQL dominada. Sigue con <Link href="/js" style={{ color: "var(--gem)" }}>[JS ALGORÍTMICO]</Link> o repite el <Link href="/sql/simulacro" style={{ color: "var(--accent)" }}>[SIMULACRO 45&apos;]</Link>.</div>
         </div>
       )}
-      {list.length === 0 && <div style={{ padding: "24px 0", color: "var(--mute)" }}>[~] sin resultados para “{q}”</div>}
+      {list.length === 0 && <div style={{ padding: "28px 0", color: "var(--mute)" }}>[~] SIN RESULTADOS PARA "{q}"</div>}
       {list.map((c) => (
-        <div key={c.id} style={{ padding: "16px 0", borderBottom: "1px solid var(--hairline)" }}>
+        <div key={c.id} style={{ padding: "18px 0", borderBottom: "1px solid var(--hairline)" }}>
           <div style={{ display: "flex", gap: 12, alignItems: "baseline", flexWrap: "wrap" }}>
-            <span style={{ color: "var(--mute)", fontSize: 14 }}>{String(c.order).padStart(2, "0")}</span>
-            <Link href={`/sql/${c.id}`} style={{ fontWeight: 700 }}>{done[c.id] ? "[+] " : "[ ] "}{c.titulo}</Link>
-            <span className={`dif dif-${c.dificultad}`}>[{c.dificultad}]</span>
-            <span style={{ fontSize: 14, color: "var(--mute)" }}>{c.empresa_patron} · ~{tiempoFor(c)}min</span>
+            <span style={{ color: "var(--mute)", fontSize: 13, fontFamily: "var(--font-rpg)", textTransform: "uppercase" }}>{String(c.order).padStart(2, "0")}</span>
+            <Link href={`/sql/${c.id}`} style={{ fontWeight: 700 }}>{done[c.id] ? "✦ " : "⚔ "}{c.titulo}</Link>
+            <span className={`dif dif-${c.dificultad}`}>[{c.dificultad.toUpperCase()}]</span>
+            <span style={{ fontSize: 12, color: "var(--mute)", fontFamily: "var(--font-rpg)" }}>{c.empresa_patron} · ⏱~{tiempoFor(c)}min</span>
           </div>
-          <div style={{ fontSize: 14, color: "var(--body)", marginTop: 4 }}>{c.enunciado.slice(0, 140)}…</div>
+          <div style={{ fontSize: 13, color: "var(--body)", marginTop: 4 }}>{c.enunciado.slice(0, 140)}&hellip;</div>
         </div>
       ))}
     </div>

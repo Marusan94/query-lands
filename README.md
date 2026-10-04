@@ -1,8 +1,8 @@
 <p align="center">
-  <h1 align="center">🧪 tech-interview-lab</h1>
+  <h1 align="center">🧪 Query Lands</h1>
   <p align="center"><strong>Plataforma interactiva de preparación para entrevistas técnicas</strong><br>
   16 retos SQL + 3 retos JS con validación en tiempo real, viaje gamificado por islas, tutor IA y repaso espaciado.<br>
-  <a href="https://tech-interview-bwx5ib0ib-maru-de07.vercel.app"><strong>🚀 Live Demo » tech-interview-lab.vercel.app</strong></a></p>
+  <a href="https://tech-interview-lab.vercel.app"><strong>🚀 Live Demo » tech-interview-lab.vercel.app</strong></a></p>
   <p align="center">
     <img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat-square" alt="Version" />
     <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />
@@ -41,7 +41,7 @@
 | **Simulacro** | 4 retos en 45 min + corrección IA con rúbrica |
 | **Logros** | Badges, mapa 8 semanas, certificado imprimible |
 
-> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-bwx5ib0ib-maru-de07.vercel.app](https://tech-interview-bwx5ib0ib-maru-de07.vercel.app)
+> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-bwx5ib0ib-maru-de07.vercel.app](https://tech-interview-lab.vercel.app)
 
 ---
 
