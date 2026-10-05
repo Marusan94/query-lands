@@ -41,7 +41,7 @@
 | **Simulacro** | 4 retos en 45 min + corrección IA con rúbrica |
 | **Logros** | Badges, mapa 8 semanas, certificado imprimible |
 
-> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-bwx5ib0ib-maru-de07.vercel.app](https://tech-interview-lab.vercel.app)
+> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app)
 
 ---
 
@@ -80,8 +80,8 @@
 
 ```bash
 # 1. Clona
-git clone https://github.com/Marusan94/tech-interview-lab.git
-cd tech-interview-lab
+git clone https://github.com/Marusan94/query-lands.git
+cd query-lands
 
 # 2. Instala (pnpm recomendado)
 pnpm install
@@ -116,7 +116,7 @@ Sin key la app funciona completa: retos, mapa, salas, simulacro, repaso, logros,
 ## 📁 Project Structure
 
 ```text
-tech-interview-lab/
+query-lands/
 ├── public/
 │   ├── sql-wasm.js          # SQLite WASM runtime (~46 KB)
 │   └── sql-wasm.wasm        # SQLite WASM binary (~658 KB)
