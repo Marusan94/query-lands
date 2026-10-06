@@ -55,6 +55,14 @@
 
 > **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app)
 
+## 📸 Screenshots
+
+| Vista | Captura |
+|-------|---------|
+| **Home / Mapa de Islas** | ![Home](docs/screenshots/home.png) |
+| **Reto SQL** | ![SQL Challenge](docs/screenshots/sql-challenge.png) |
+| **Ajustes / Tema** | ![Ajustes](docs/screenshots/ajustes.png) |
+
 ---
 
 ## ✨ Features
@@ -174,6 +182,19 @@ query-lands/
 - [ ] **PWA offline** (Service Worker + cache estratégico)
 - [ ] **Más retos SQL** (CTEs recursivas, lateral joins, JSON)
 - [ ] **Retos TypeScript** (tipado estricto, generics, utility types)
+
+## 🎮 Demo en vivo
+
+[https://tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app) — sin registro, sin tarjeta. Entra y practica SQL/JS al instante.
+
+## 🔧 Casos de uso
+
+| Perfil | Qué haces |
+|--------|-----------|
+| **Estudiante / Junior** | Recorrido guiado 16 retos SQL + 3 JS, tutor IA socrático, repaso espaciado |
+| **Entrevista técnica** | Simulacro 45 min con 4 retos mixtos + corrección IA con rúbrica |
+| **Calentamiento diario** | Misiones diarias, meta diaria, racha + heatmap 8 semanas |
+| **Autodidacta** | Editor Monaco + SQLite WASM en browser, tests visibles + ocultos, solución validada |
 
 ---
 
