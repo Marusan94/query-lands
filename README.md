@@ -18,6 +18,18 @@
 
 ---
 
+## 🧭 El proyecto en breve
+
+**Máquina de práctica SQL sin instalación**
+
+- **Problema:** Aprender SQL exige instalar entornos y resulta aburrido.
+- **Automatización:** 16 retos SQL + 3 de JS corriendo en el navegador, con tutor IA que corrige al instante.
+- **Resultado:** Practicas desde el primer clic, con cero fricción.
+
+`Next.js` · `TypeScript` · `SQLite` — [Demo →](https://tech-interview-lab.vercel.app) · [Código →](https://github.com/Marusan94/query-lands)
+
+---
+
 ## 📋 Tabla de Contenidos
 
 - [Screenshots](#-screenshots)
