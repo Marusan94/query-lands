@@ -33,6 +33,7 @@
 ## 📋 Tabla de Contenidos
 
 - [Screenshots](#-screenshots)
+- [Demo](#-demo)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Quickstart](#-quickstart)
@@ -44,24 +45,33 @@
 
 ## 🖼️ Screenshots
 
-| Vista | Descripción |
-|-------|-------------|
-| **Mapa de Islas** | 4 islas animadas (día, faro nocturno, volcán, cristales) con ruta dorada que se llena según progreso |
-| **Reto SQL** | Editor Monaco + validación SQLite WASM en browser, tests visibles + ocultos |
-| **Sala de Nivel** | Torres N1..Nn por isla, XP, dominio, racha y heatmap |
-| **Tutor IA** | Modo socrático: pistas progresivas, explicación paso a paso, solución validada |
-| **Simulacro** | 4 retos en 45 min + corrección IA con rúbrica |
-| **Logros** | Badges, mapa 8 semanas, certificado imprimible |
+| Vista | Descripción | Captura |
+|-------|-------------|---------|
+| **Home / Mapa de Islas** | 4 islas animadas (día, faro nocturno, volcán, cristales) con ruta dorada que se llena según progreso | ![Home](docs/screenshots/home.png) |
+| **Reto SQL** | Editor Monaco + validación SQLite WASM en browser, tests visibles + ocultos | ![SQL Challenge](docs/screenshots/sql-challenge.png) |
+| **Ajustes / Tema** | Claro/oscuro equilibrados como yin-yang + toggle 🌗, modo calma, fuente, sonido | ![Ajustes](docs/screenshots/ajustes.png) |
 
-> **Nota**: Las capturas se añadirán próximamente. El proyecto está live en [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app)
+> 💡 Para regenerar las capturas: abre [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app), captura Home, un reto SQL y Ajustes, y guárdalas en `docs/screenshots/` con esos mismos nombres.
 
-## 📸 Screenshots
+---
 
-| Vista | Captura |
-|-------|---------|
-| **Home / Mapa de Islas** | ![Home](docs/screenshots/home.png) |
-| **Reto SQL** | ![SQL Challenge](docs/screenshots/sql-challenge.png) |
-| **Ajustes / Tema** | ![Ajustes](docs/screenshots/ajustes.png) |
+## 🎬 Demo
+
+🎥 **Video:** `docs/demo-querylands.mp4` — marcador de posición para el video del recorrido completo (mapa → reto SQL → tutor IA).
+
+**Cómo crear el video:**
+
+1. Abre [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app).
+2. Graba el recorrido (recomendado: mapa de islas → resolver un reto SQL → pedir una pista al tutor IA) con tu grabadora de pantalla.
+3. Exporta como MP4, guárdalo en `docs/demo-querylands.mp4` y sustituye esta nota por el reproductor:
+
+   ```html
+   <video src="docs/demo-querylands.mp4" width="100%" controls></video>
+   ```
+
+   > Nota: GitHub no reproduce videos locales en el README; para visualización directa sube el MP4 a un release o a YouTube y enlázalo aquí.
+
+🌐 **Live:** [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app) — sin registro, sin tarjeta. Entra y practica SQL/JS al instante.
 
 ---
 
@@ -182,10 +192,6 @@ query-lands/
 - [ ] **PWA offline** (Service Worker + cache estratégico)
 - [ ] **Más retos SQL** (CTEs recursivas, lateral joins, JSON)
 - [ ] **Retos TypeScript** (tipado estricto, generics, utility types)
-
-## 🎮 Demo en vivo
-
-[https://tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app) — sin registro, sin tarjeta. Entra y practica SQL/JS al instante.
 
 ## 🔧 Casos de uso
 
