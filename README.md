@@ -43,35 +43,22 @@
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
-| Vista | Descripción | Captura |
-|-------|-------------|---------|
-| **Home / Mapa de Islas** | 4 islas animadas (día, faro nocturno, volcán, cristales) con ruta dorada que se llena según progreso | ![Home](docs/screenshots/home.png) |
-| **Reto SQL** | Editor Monaco + validación SQLite WASM en browser, tests visibles + ocultos | ![SQL Challenge](docs/screenshots/sql-challenge.png) |
-| **Ajustes / Tema** | Claro/oscuro equilibrados como yin-yang + toggle 🌗, modo calma, fuente, sonido | ![Ajustes](docs/screenshots/ajustes.png) |
+| Vista | Captura |
+|-------|---------|
+| Mapa 4 islas + ruta | ![Home](docs/screenshots/home.png) |
+| Reto SQL (editor + tutor) | ![SQL Challenge](docs/screenshots/sql-challenge.png) |
+| Ajustes (yin-yang + calma) | ![Ajustes](docs/screenshots/ajustes.png) |
 
-> 💡 Para regenerar las capturas: abre [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app), captura Home, un reto SQL y Ajustes, y guárdalas en `docs/screenshots/` con esos mismos nombres.
+> Capturadas con Playwright (1366×768) del demo vivo https://tech-interview-lab.vercel.app
 
----
+## 🎥 Demo en video
 
-## 🎬 Demo
+[![Query Lands Demo](docs/screenshots/home.png)](docs/demo-querylands.mp4)
+*Recorrido 90s: mapa islas → reto SQL → tutor IA → logros.*
 
-🎥 **Video:** `docs/demo-querylands.mp4` — marcador de posición para el video del recorrido completo (mapa → reto SQL → tutor IA).
-
-**Cómo crear el video:**
-
-1. Abre [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app).
-2. Graba el recorrido (recomendado: mapa de islas → resolver un reto SQL → pedir una pista al tutor IA) con tu grabadora de pantalla.
-3. Exporta como MP4, guárdalo en `docs/demo-querylands.mp4` y sustituye esta nota por el reproductor:
-
-   ```html
-   <video src="docs/demo-querylands.mp4" width="100%" controls></video>
-   ```
-
-   > Nota: GitHub no reproduce videos locales en el README; para visualización directa sube el MP4 a un release o a YouTube y enlázalo aquí.
-
-🌐 **Live:** [tech-interview-lab.vercel.app](https://tech-interview-lab.vercel.app) — sin registro, sin tarjeta. Entra y practica SQL/JS al instante.
+> Sube `docs/demo-querylands.mp4` a YouTube/Loom y reemplaza este link.
 
 ---
 
